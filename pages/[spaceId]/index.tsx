@@ -22,17 +22,25 @@ const Page: NextPage<
   const [name, setName] = useState("");
   return (
     <article>
-      <h1>This page is {spaceId}.</h1>
-      <h2>Whats your name.</h2>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.currentTarget.value)}
-      />
+      <h1>This is SSR page.</h1>
+      <p>spaceId: {spaceId}.</p>
+      <label>
+        Whats your name.
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.currentTarget.value)}
+        />
+      </label>
       {!!name && (
         <p>
           Go to {name} page. Click{" "}
-          <Link href={`/${spaceId}/name/${name}`}>here</Link>
+          <Link
+            href={`/${spaceId}/name/${name}`}
+            style={{ textDecoration: "underline", color: "blue" }}
+          >
+            here
+          </Link>
         </p>
       )}
     </article>

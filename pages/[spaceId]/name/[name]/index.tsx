@@ -6,8 +6,9 @@ const Page = () => {
   const name = router.query.name as string;
   return (
     <article>
-      <h1>This page is {spaceId}.</h1>
+      <h1>This is Static page.</h1>
       <h2>Hello {name} 👋</h2>
+      <p>spaceId: {spaceId}.</p>
     </article>
   );
 };
